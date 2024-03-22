@@ -1,3 +1,3 @@
-module github.com/bobkamopkobka/go
+module github.com/bobkamopkobka/learn
 
 go 1.21.5

@@ -3,11 +3,19 @@ package main
 import (
 	"fmt"
 	"log"
-	"readfromfile"
+	"os"
+	"github.com/bobkamopkobka/learn/readfromfile"
 )
 
 func main() {
-	lines, err := readfromfile.GetLines("my.txt")
+
+	file, err := os.Open("my.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	lines, err := readfromfile.GetLines(file)
 	if err != nil {
 		log.Fatal(err)
 	}
